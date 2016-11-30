@@ -26,4 +26,14 @@ class RandomStrategy(AbstractStrategy):
                     result += height-i-1
         return result
 
-    def           
+    def completLine(field):
+        result = 0
+        sumTemp = 0
+        for i in range (0,height) :
+            sumTemp = 0
+            for j in range(0,width) :
+                if field.field[i][j] == 1:
+                    sumTemp++
+            if sumTemp == width:
+                result++
+        return result
