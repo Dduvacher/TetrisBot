@@ -15,7 +15,15 @@ class RandomStrategy(AbstractStrategy):
 
         return moves
 
-    def aggregateHeight()
-        oldField = self._game.me.field
-        newField = oldField.projectPieceDown(self._game.piece)
-        update.nameMyBot.field
+
+    @staticmethod
+    def aggregateHeight(field):
+        result = 0
+        width,height = field.size()
+        for i in range (0,height) :
+            for j in range(0,width) :
+                if( field.field[height-i][j] == 0):
+                    result += height-i-1
+        return result
+
+    def           
