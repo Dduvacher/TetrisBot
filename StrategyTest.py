@@ -31,8 +31,10 @@ for line in field:
 fieldObj = Field()
 fieldObj.updateField(field)
 #print(fieldObj.heights())
-print(OurStrategy.completLine(fieldObj))
-print(OurStrategy.bumpiness(fieldObj))
+print(fieldObj.completLine())
+print(fieldObj.bumpiness())
+print(fieldObj.numberOfHole())
+print(fieldObj.aggregateHeight())
 #print(OurStrategy.aggregateHeight(fieldObj))
 
 

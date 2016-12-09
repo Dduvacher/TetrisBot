@@ -39,6 +39,34 @@ class Field:
             result.append(self.heightForColumn(i))
         return result
 
+    def aggregateHeight(self):
+        return sum(self.heights())
+
+    def completLine(self):
+        result = 0
+        width, height = self.size()
+        for i in range (0, height) :
+            if sum(self.field[i]) == width:
+                result+=1
+        return result
+
+    def bumpiness(self):
+        result = 0
+        heights = self.heights()
+        for i in range(0, len(heights)-1):
+            result += abs(heights[i]-heights[i+1])
+        return result
+
+    def numberOfHole(self):
+        width, height = self.size()
+        heights = self.heights()
+        result = 0
+        for i in range (0, height) :
+            for j in range(0, width) :
+                if self.field[i][j] == 0 and height-i < heights[j]:
+                    result+=1
+        return result
+
     @staticmethod
     def __offsetPiece(piecePositions, offset):
         piece = copy.deepcopy(piecePositions)
