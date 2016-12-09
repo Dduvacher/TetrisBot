@@ -25,6 +25,20 @@ class Field:
 
         return field
 
+    def heightForColumn(self, column):
+        width, height = self.size()
+        for i in range(1, height):
+            if(self.field[i][column] == 1):
+                return height-i
+        return 0
+
+    def heights(self):
+        result = []
+        width, height = self.size()
+        for i in range(0, width):
+            result.append(self.heightForColumn(i))
+        return result
+
     @staticmethod
     def __offsetPiece(piecePositions, offset):
         piece = copy.deepcopy(piecePositions)
