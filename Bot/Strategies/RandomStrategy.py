@@ -1,4 +1,7 @@
 from random import randint
+from Bot.Game.Field import Field
+from Bot.Game import Piece
+from Bot.Game import Game
 
 from AbstractStrategy import AbstractStrategy
 
@@ -12,5 +15,4 @@ class RandomStrategy(AbstractStrategy):
         ind = [randint(0, 4) for _ in range(1, 10)]
         moves = map(lambda x: self._actions[x], ind)
         moves.append('drop')
-
         return moves

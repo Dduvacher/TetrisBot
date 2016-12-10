@@ -79,7 +79,7 @@ class Field:
     def __checkIfPieceFits(self, piecePositions):
         for x,y in piecePositions:
             if 0 <= x < self.width and 0 <= y < self.height:
-                if self.field[y][x] > 1:
+                if self.field[y][x] >= 1:
                     return False
             else:
                 return False
@@ -94,7 +94,7 @@ class Field:
         field = copy.deepcopy(self.field)
         if self.__checkIfPieceFits(piece):
             for x,y in piece:
-                field[y][x] = 4
+                field[y][x] = 1
 
             return field
         else:
